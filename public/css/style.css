@@ -305,3 +305,5 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; }
   .person-body { padding: .7rem .8rem .9rem; }
   .events-grid { grid-template-columns: 1fr; }
 }
+
+.lightbox[hidden] { display: none; }
