@@ -1,0 +1,96 @@
+<%- include('partials/header') %>
+
+<section class="hero">
+  <% const heroImg = resolveImage('emotionheader5783747643.jpg'); %>
+  <div class="hero-bg" <% if (heroImg) { %>style="background-image:url('<%= heroImg %>')"<% } %>></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content reveal">
+    <p class="hero-kicker">Blasmusik aus dem Montafon · seit 1923</p>
+    <h1>Bürgermusik<br>St. Gallenkirch</h1>
+    <p class="hero-sub">„Im Takte fest, im Tone rein, soll unser Spiel und Leben sein.“</p>
+    <div class="hero-actions">
+      <a class="btn btn-gold" href="/termine">Unsere Termine</a>
+      <a class="btn btn-outline" href="/ueber-uns">Über uns</a>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">▾</div>
+</section>
+
+<section class="section">
+  <div class="container narrow reveal">
+    <h2 class="section-title"><%= welcomeTitle %></h2>
+    <div class="prose center"><%- nl2p(welcomeText) %></div>
+    <p class="social-line">
+      <a href="https://www.instagram.com/<%= site.instagram.replace('@','') %>" target="_blank" rel="noopener" class="chip">Instagram <%= site.instagram %></a>
+      <a href="https://www.instagram.com/<%= site.instagramJugend.replace('@','') %>" target="_blank" rel="noopener" class="chip">Jungmusig <%= site.instagramJugend %></a>
+      <a href="<%= site.facebook %>" target="_blank" rel="noopener" class="chip">Facebook</a>
+    </p>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 class="section-title">Nächste Termine</h2>
+      <a href="/termine" class="link-more">Alle Termine →</a>
+    </div>
+    <div class="events-grid">
+      <% events.forEach(e => { %>
+        <div class="event-card reveal">
+          <div class="event-date"><%= e.datum %></div>
+          <div class="event-title"><%= e.titel %></div>
+          <% if (e.ort) { %><div class="event-ort">📍 <%= e.ort %></div><% } %>
+          <% if (e.hinweis) { %><div class="event-note"><%= e.hinweis %></div><% } %>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 class="section-title">Aktuelle Berichte</h2>
+      <a href="/berichte" class="link-more">Alle Berichte →</a>
+    </div>
+    <div class="report-grid">
+      <% reports.forEach(r => { const cover = r.images.length ? resolveImage(r.images[0]) : null; %>
+        <a class="report-card reveal" href="/berichte/<%= r.slug %>">
+          <div class="report-img">
+            <% if (cover) { %><img src="<%= cover %>" alt="<%= r.title %>" loading="lazy"><% } else { %><div class="report-img-ph">♪</div><% } %>
+          </div>
+          <div class="report-body">
+            <span class="report-date"><%= r.date %></span>
+            <h3><%= r.title %></h3>
+            <p><%= r.body.replace(/\*\*/g, '').substring(0, 130) %>…</p>
+          </div>
+        </a>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section section-cream">
+  <div class="container split reveal">
+    <div class="split-img">
+      <% const vf = resolveImage('teaserbox_2479677403.png') || resolveImage('2479677403'); %>
+      <% if (vf) { %><img src="<%= vf %>" alt="Vereinsfoto der Bürgermusik St. Gallenkirch" class="glightbox-single" loading="lazy"><% } %>
+    </div>
+    <div class="split-text">
+      <h2 class="section-title">Unser Verein</h2>
+      <div class="prose small"><%- nl2p(vereinsfotoText) %></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-join">
+  <div class="container narrow reveal">
+    <h2 class="section-title light">WE WANT YOU! Komm zur Musig!</h2>
+    <div class="prose center light"><%- nl2p(joinText) %></div>
+    <p style="text-align:center; margin-top: 1.5rem;">
+      <a class="btn btn-gold" href="/kontakt">Jetzt melden</a>
+    </p>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

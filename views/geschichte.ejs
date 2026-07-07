@@ -1,0 +1,13 @@
+<%- include('partials/header') %>
+<section class="page-head img" style="<% const h = resolveImage('emotionheader5783747779.jpg'); if (h) { %>background-image:url('<%= h %>')<% } %>">
+  <div class="container"><h1>Geschichte</h1><p>Über 100 Jahre Bürgermusik St. Gallenkirch</p></div>
+</section>
+<section class="section">
+  <div class="container narrow">
+    <% const old = resolveImage('2419269968'); if (old) { %>
+      <div class="group-photo sepia reveal"><img src="<%= old %>" alt="Historisches Foto der Bürgermusik St. Gallenkirch" loading="lazy"></div>
+    <% } %>
+    <div class="prose reveal"><%- nl2p(text) %></div>
+  </div>
+</section>
+<%- include('partials/footer') %>

@@ -1,0 +1,15 @@
+<%- include('partials/header') %>
+<section class="page-head"><div class="container"><h1>Mitglieder</h1><p>Unsere Register im Überblick</p></div></section>
+<section class="section">
+  <div class="container">
+    <div class="register-grid">
+      <% registers.forEach(reg => { const img = resolveImage(reg.registerImage) || (reg.members[0] ? resolveImage(reg.members[0].image) : null); %>
+        <a class="register-card reveal" href="/mitglieder/<%= reg.slug %>">
+          <div class="register-img"><% if (img) { %><img src="<%= img %>" alt="<%= reg.title %>" loading="lazy"><% } else { %><div class="person-ph">♪</div><% } %></div>
+          <div class="register-body"><h3><%= reg.title %></h3><span><%= reg.members.length %> <%= reg.members.length === 1 ? 'Mitglied' : 'Mitglieder' %> →</span></div>
+        </a>
+      <% }) %>
+    </div>
+  </div>
+</section>
+<%- include('partials/footer') %>

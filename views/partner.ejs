@@ -1,0 +1,17 @@
+<%- include('partials/header') %>
+<section class="page-head img" style="<% const h = resolveImage('emotionheader5809717371.JPG'); if (h) { %>background-image:url('<%= h %>')<% } %>">
+  <div class="container"><h1>Partnerkapellen</h1><p>Musikalische Freundschaften über Vorarlberg hinaus</p></div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="partner-grid">
+      <% partners.forEach(p => { const img = resolveImage(p.coverImage); %>
+        <a class="partner-card reveal" href="/partnerkapellen/<%= p.slug %>">
+          <div class="partner-img"><% if (img) { %><img src="<%= img %>" alt="<%= p.title %>" loading="lazy"><% } %></div>
+          <div class="partner-body"><h3><%= p.title %></h3><p><%= p.subtitle %></p><span class="link-more">Mehr erfahren →</span></div>
+        </a>
+      <% }) %>
+    </div>
+  </div>
+</section>
+<%- include('partials/footer') %>

@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+<section class="page-head"><div class="container"><h1>Termine</h1><p><%= introText %></p></div></section>
+<section class="section">
+  <div class="container narrow">
+    <div class="timeline">
+      <% events.forEach(e => { %>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="event-date"><%= e.datum %></div>
+            <div class="event-title"><%= e.titel %></div>
+            <% if (e.ort) { %><div class="event-ort">📍 <%= e.ort %></div><% } %>
+            <% if (e.hinweis) { %><div class="event-note"><%= e.hinweis %></div><% } %>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+    <% if (!events.length) { %><p>Derzeit sind keine Termine eingetragen.</p><% } %>
+  </div>
+</section>
+<%- include('partials/footer') %>

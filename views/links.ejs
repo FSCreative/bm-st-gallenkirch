@@ -1,0 +1,15 @@
+<%- include('partials/header') %>
+<section class="page-head"><div class="container"><h1>Links</h1><p><%= linksData.title %></p></div></section>
+<section class="section">
+  <div class="container narrow">
+    <% (linksData.groups || []).forEach(gr => { %>
+      <div class="link-group reveal">
+        <h2 class="section-title" style="font-size:1.2rem"><%= gr.name %></h2>
+        <ul class="link-list">
+          <% gr.links.forEach(l => { %><li><a href="<%= l.url %>" target="_blank" rel="noopener"><%= l.label %> ↗</a></li><% }) %>
+        </ul>
+      </div>
+    <% }) %>
+  </div>
+</section>
+<%- include('partials/footer') %>

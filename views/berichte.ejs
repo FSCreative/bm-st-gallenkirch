@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+<section class="page-head"><div class="container"><h1>Berichte</h1><p>Neuigkeiten und Rückblicke aus dem Vereinsleben</p></div></section>
+<section class="section">
+  <div class="container">
+    <div class="report-grid">
+      <% reports.forEach(r => { const cover = r.images.length ? resolveImage(r.images[0]) : null; %>
+        <a class="report-card reveal" href="/berichte/<%= r.slug %>">
+          <div class="report-img">
+            <% if (cover) { %><img src="<%= cover %>" alt="<%= r.title %>" loading="lazy"><% } else { %><div class="report-img-ph">♪</div><% } %>
+          </div>
+          <div class="report-body">
+            <span class="report-date"><%= r.date %></span>
+            <h3><%= r.title %></h3>
+            <p><%= r.body.replace(/\*\*/g, '').substring(0, 130) %>…</p>
+          </div>
+        </a>
+      <% }) %>
+    </div>
+  </div>
+</section>
+<%- include('partials/footer') %>

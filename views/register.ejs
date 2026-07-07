@@ -1,0 +1,25 @@
+<%- include('partials/header') %>
+<section class="page-head"><div class="container"><h1><%= reg.title %></h1><p>Register der Bürgermusik St. Gallenkirch</p></div></section>
+<section class="section">
+  <div class="container">
+    <% const rimg = resolveImage(reg.registerImage); if (rimg) { %>
+      <div class="group-photo reveal"><img src="<%= rimg %>" alt="Register <%= reg.title %>" loading="lazy"></div>
+    <% } %>
+    <div class="person-grid">
+      <% reg.members.forEach(m => { const img = resolveImage(m.image); %>
+        <div class="person-card reveal">
+          <div class="person-img"><% if (img) { %><img src="<%= img %>" alt="<%= m.name %>" loading="lazy"><% } else { %><div class="person-ph">♪</div><% } %></div>
+          <div class="person-body">
+            <h3><%= m.name %></h3>
+            <ul class="person-details"><% (m.details || []).forEach(d => { %><li><%= d %></li><% }) %></ul>
+            <% if (m.extra) { %><p class="person-extra"><%= m.extra %></p><% } %>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+    <div class="register-nav reveal">
+      <% registers.forEach(r2 => { %><a href="/mitglieder/<%= r2.slug %>" class="chip <%= r2.slug === reg.slug ? 'chip-active' : '' %>"><%= r2.title %></a><% }) %>
+    </div>
+  </div>
+</section>
+<%- include('partials/footer') %>

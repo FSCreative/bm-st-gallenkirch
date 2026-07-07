@@ -1,0 +1,15 @@
+<%- include('partials/header') %>
+<section class="page-head"><div class="container"><h1><%= g.title %></h1><p><%= photos.length %> Fotos</p></div></section>
+<section class="section">
+  <div class="container">
+    <div class="gallery-grid large" data-lightbox>
+      <% photos.forEach(p => { %>
+        <a href="/media/<%= p.file %>" class="gallery-item reveal" <% if (p.caption) { %>data-caption="<%= p.caption %>"<% } %>>
+          <img src="/media/<%= p.file %>" alt="<%= p.caption || g.title %>" loading="lazy">
+        </a>
+      <% }) %>
+    </div>
+    <p style="margin-top:2rem"><a class="btn btn-outline-dark" href="/fotos">← Alle Galerien</a></p>
+  </div>
+</section>
+<%- include('partials/footer') %>

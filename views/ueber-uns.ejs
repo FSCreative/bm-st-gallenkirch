@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+<section class="page-head img" style="<% const h = resolveImage('emotionheader5809717490.jpg'); if (h) { %>background-image:url('<%= h %>')<% } %>">
+  <div class="container"><h1>Über uns</h1><p>Die Bürgermusik St. Gallenkirch stellt sich vor</p></div>
+</section>
+<section class="section">
+  <div class="container narrow">
+    <div class="stats-row reveal">
+      <% stats.forEach(s => { %>
+        <div class="stat"><span class="stat-value" data-count="<%= s.value %>"><%= s.value %></span><span class="stat-label"><%= s.label %></span></div>
+      <% }) %>
+    </div>
+    <div class="prose reveal"><%- nl2p(text) %></div>
+    <div class="subpage-cards reveal">
+      <a href="/ueber-uns/vorstand" class="subpage-card"><span>Vorstand</span>→</a>
+      <a href="/ueber-uns/geschichte" class="subpage-card"><span>Geschichte</span>→</a>
+      <a href="/ueber-uns/obmaenner" class="subpage-card"><span>Obmänner</span>→</a>
+      <a href="/ueber-uns/kapellmeister" class="subpage-card"><span>Kapellmeister</span>→</a>
+    </div>
+  </div>
+</section>
+<%- include('partials/footer') %>

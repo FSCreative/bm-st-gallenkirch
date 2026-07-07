@@ -1,0 +1,17 @@
+<%- include('partials/header') %>
+<section class="page-head"><div class="container"><h1><%= r.title %></h1><p><%= r.date %></p></div></section>
+<article class="section">
+  <div class="container narrow">
+    <div class="prose reveal"><%- nl2p(r.body) %></div>
+    <% const imgs = r.images.map(i => ({ src: resolveImage(i), ref: i })).filter(i => i.src); %>
+    <% if (imgs.length) { %>
+      <div class="gallery-grid" data-lightbox>
+        <% imgs.forEach(i => { %>
+          <a href="<%= i.src %>" class="gallery-item reveal"><img src="<%= i.src %>" alt="<%= r.title %>" loading="lazy"></a>
+        <% }) %>
+      </div>
+    <% } %>
+    <p style="margin-top:2rem"><a class="btn btn-outline-dark" href="/berichte">← Alle Berichte</a></p>
+  </div>
+</article>
+<%- include('partials/footer') %>

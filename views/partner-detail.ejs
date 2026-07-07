@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+<section class="page-head"><div class="container"><h1><%= p.title %></h1><p><%= p.subtitle %></p></div></section>
+<section class="section">
+  <div class="container narrow">
+    <div class="prose reveal"><%- nl2p(p.text) %></div>
+    <% if (p.website) { %><p class="reveal"><a class="btn btn-outline-dark" href="<%= p.website %>" target="_blank" rel="noopener">Zur Website von <%= p.title %> →</a></p><% } %>
+    <% const imgs = (p.images || []).map(i => ({ src: resolveImage(i) })).filter(i => i.src); %>
+    <% if (imgs.length) { %>
+      <h2 class="section-title" style="margin-top:2.5rem">Fotos</h2>
+      <div class="gallery-grid" data-lightbox>
+        <% imgs.forEach(i => { %><a href="<%= i.src %>" class="gallery-item reveal"><img src="<%= i.src %>" alt="<%= p.title %>" loading="lazy"></a><% }) %>
+      </div>
+    <% } %>
+  </div>
+</section>
+<%- include('partials/footer') %>

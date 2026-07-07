@@ -1,0 +1,14 @@
+<%- include('partials/header') %>
+<section class="page-head"><div class="container"><h1><%= title %></h1><p>Chronik seit 1923</p></div></section>
+<section class="section">
+  <div class="container narrow">
+    <h2 class="section-title reveal" style="font-size:1.3rem"><%= heading %></h2>
+    <table class="chronik-table reveal">
+      <thead><tr><th>Name</th><th>Zeitraum</th></tr></thead>
+      <tbody>
+        <% rows.forEach(r => { %><tr><td><%= r[0] %></td><td><%= r[1] %></td></tr><% }) %>
+      </tbody>
+    </table>
+  </div>
+</section>
+<%- include('partials/footer') %>

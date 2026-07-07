@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+<section class="page-head img" style="<% const h = resolveImage('emotionheader5809717307.JPG'); if (h) { %>background-image:url('<%= h %>')<% } %>">
+  <div class="container"><h1>Kontakt</h1><p>Wir freuen uns, von dir zu hören!</p></div>
+</section>
+<section class="section">
+  <div class="container narrow">
+    <div class="prose center reveal"><%- nl2p(text) %></div>
+    <div class="contact-grid">
+      <% contacts.forEach(c => { %>
+        <div class="contact-card reveal">
+          <span class="person-role"><%= c.role %></span>
+          <h3><%= c.name %></h3>
+          <% if (c.address) { %><p><%= c.address %></p><% } %>
+          <% if (c.phone) { %><p><a href="tel:<%= c.phone.replace(/\s/g,'') %>"><%= c.phone %></a></p><% } %>
+          <% if (c.email) { %><p><a href="mailto:<%= c.email %>"><%= c.email %></a></p><% } %>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+<%- include('partials/footer') %>

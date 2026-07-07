@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+<section class="page-head"><div class="container"><h1>Fotos</h1><p>Unsere Galerien</p></div></section>
+<section class="section">
+  <div class="container">
+    <% if (!galleries.length) { %><p class="reveal">Bald findet ihr hier unsere Fotogalerien!</p><% } %>
+    <div class="register-grid">
+      <% galleries.forEach(g => { %>
+        <a class="register-card reveal" href="/fotos/<%= g.slug %>">
+          <div class="register-img"><% if (g.cover) { %><img src="/media/<%= g.cover %>" alt="<%= g.title %>" loading="lazy"><% } else { %><div class="person-ph">📷</div><% } %></div>
+          <div class="register-body"><h3><%= g.title %></h3><span><%= g.cnt %> Fotos →</span></div>
+        </a>
+      <% }) %>
+    </div>
+  </div>
+</section>
+<%- include('partials/footer') %>

@@ -1,0 +1,25 @@
+<%- include('partials/header') %>
+<section class="page-head"><div class="container"><h1>Vorstand</h1><p>Die Vereinsleitung der Bürgermusik St. Gallenkirch</p></div></section>
+<section class="section">
+  <div class="container">
+    <% const gp = resolveImage('2481867531'); if (gp) { %>
+      <div class="group-photo reveal"><img src="<%= gp %>" alt="Vorstand der Bürgermusik St. Gallenkirch" loading="lazy"></div>
+    <% } %>
+    <div class="person-grid">
+      <% vorstand.forEach(v => { const img = resolveImage(v.image); %>
+        <div class="person-card reveal">
+          <div class="person-img"><% if (img) { %><img src="<%= img %>" alt="<%= v.name %>" loading="lazy"><% } else { %><div class="person-ph">♪</div><% } %></div>
+          <div class="person-body">
+            <span class="person-role"><%= v.role %></span>
+            <h3><%= v.name %></h3>
+            <ul class="person-details">
+              <% v.details.forEach(d => { %><li><%= d %></li><% }) %>
+            </ul>
+            <% if (v.extra) { %><p class="person-extra"><%= v.extra %></p><% } %>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+<%- include('partials/footer') %>
