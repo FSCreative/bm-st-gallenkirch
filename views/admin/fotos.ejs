@@ -1,0 +1,25 @@
+<%- include('head') %>
+<div class="admin-title-row">
+  <h1>Fotogalerien</h1>
+  <form method="post" action="/admin/fotos/galerie-neu" class="inline-form">
+    <input type="text" name="title" placeholder="Neue Galerie…" required>
+    <button class="btn btn-gold">+ Anlegen</button>
+  </form>
+</div>
+<table class="admin-table">
+  <thead><tr><th>Galerie</th><th>Fotos</th><th></th></tr></thead>
+  <tbody>
+    <% galleries.forEach(g => { %>
+      <tr>
+        <td><a href="/admin/fotos/<%= g.id %>"><%= g.title %></a></td>
+        <td><%= g.cnt %></td>
+        <td class="admin-actions">
+          <a class="btn-small" href="/admin/fotos/<%= g.id %>">Öffnen</a>
+          <a class="btn-small" href="/fotos/<%= g.slug %>" target="_blank">Ansehen ↗</a>
+          <form method="post" action="/admin/fotos/<%= g.id %>/loeschen" onsubmit="return confirm('Galerie samt Fotos wirklich löschen?')"><button class="btn-small danger">Löschen</button></form>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+<%- include('foot') %>

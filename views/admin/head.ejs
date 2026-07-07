@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> – Admin | BM St. Gallenkirch</title>
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="admin-body">
+<header class="admin-header">
+  <a href="/admin" class="brand"><strong>BM St. Gallenkirch</strong> · Admin</a>
+  <nav>
+    <a href="/admin/berichte" class="<%= path.startsWith('/admin/berichte') ? 'active' : '' %>">Berichte</a>
+    <a href="/admin/fotos" class="<%= path.startsWith('/admin/fotos') ? 'active' : '' %>">Fotos</a>
+    <a href="/admin/texte" class="<%= path.startsWith('/admin/texte') ? 'active' : '' %>">Texte</a>
+    <a href="/admin/termine" class="<%= path.startsWith('/admin/termine') ? 'active' : '' %>">Termine</a>
+    <a href="/" target="_blank">Website ↗</a>
+    <a href="/admin/logout">Abmelden</a>
+  </nav>
+</header>
+<main class="admin-main">

@@ -1,0 +1,15 @@
+<%- include('head') %>
+<h1>Texte bearbeiten</h1>
+<% if (saved) { %><div class="admin-info success">Gespeichert!</div><% } %>
+<form method="post" action="/admin/texte" class="admin-form">
+  <% texts.forEach(t => { %>
+    <label><%= t.label %></label>
+    <% if (t.rows === 1) { %>
+      <input type="text" name="<%= t.key %>" value="<%= t.value %>">
+    <% } else { %>
+      <textarea name="<%= t.key %>" rows="<%= t.rows %>"><%= t.value %></textarea>
+    <% } %>
+  <% }) %>
+  <div class="admin-form-actions"><button type="submit" class="btn btn-gold">Alle Texte speichern</button></div>
+</form>
+<%- include('foot') %>

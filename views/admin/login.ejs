@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin-Login | BM St. Gallenkirch</title>
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="admin-body login-body">
+  <form class="login-card" method="post" action="/admin/login">
+    <h1>Admin-Bereich</h1>
+    <p>Bürgermusik St. Gallenkirch</p>
+    <% if (error) { %><div class="alert"><%= error %></div><% } %>
+    <label for="password">Passwort</label>
+    <input type="password" id="password" name="password" required autofocus>
+    <button type="submit" class="btn btn-gold" style="width:100%">Anmelden</button>
+    <a class="login-back" href="/">← Zurück zur Website</a>
+  </form>
+</body>
+</html>

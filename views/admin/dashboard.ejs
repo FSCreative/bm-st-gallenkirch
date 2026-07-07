@@ -1,0 +1,15 @@
+<%- include('head') %>
+<h1>Willkommen im Admin-Bereich</h1>
+<p class="muted">Hier kannst du Berichte schreiben, Fotos hochladen, Texte ändern und Termine pflegen.</p>
+<div class="admin-cards">
+  <a href="/admin/berichte" class="admin-card"><span class="admin-card-num"><%= counts.reports %></span>Berichte<small>Berichte schreiben &amp; bearbeiten</small></a>
+  <a href="/admin/fotos" class="admin-card"><span class="admin-card-num"><%= counts.photos %></span>Fotos<small><%= counts.galleries %> Galerien verwalten</small></a>
+  <a href="/admin/texte" class="admin-card"><span class="admin-card-num">✎</span>Texte<small>Seitentexte bearbeiten</small></a>
+  <a href="/admin/termine" class="admin-card"><span class="admin-card-num"><%= counts.events %></span>Termine<small>Auftritte &amp; Veranstaltungen</small></a>
+</div>
+<% if (importStats) { %>
+  <div class="admin-info">Bild-Import von der alten Website: <%= importStats.ok %> von <%= importStats.total %> Bildern übernommen (<%= importStats.at %>).</div>
+<% } else { %>
+  <div class="admin-info">Bild-Import von der alten Website läuft noch im Hintergrund…</div>
+<% } %>
+<%- include('foot') %>

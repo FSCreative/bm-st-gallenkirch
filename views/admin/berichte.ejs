@@ -1,0 +1,22 @@
+<%- include('head') %>
+<div class="admin-title-row">
+  <h1>Berichte</h1>
+  <a class="btn btn-gold" href="/admin/berichte/neu">+ Neuer Bericht</a>
+</div>
+<table class="admin-table">
+  <thead><tr><th>Datum</th><th>Titel</th><th>Status</th><th></th></tr></thead>
+  <tbody>
+    <% reports.forEach(r => { %>
+      <tr>
+        <td><%= r.date %></td>
+        <td><a href="/admin/berichte/<%= r.id %>"><%= r.title %></a></td>
+        <td><%= r.published ? 'veröffentlicht' : 'Entwurf' %></td>
+        <td class="admin-actions">
+          <a class="btn-small" href="/admin/berichte/<%= r.id %>">Bearbeiten</a>
+          <form method="post" action="/admin/berichte/<%= r.id %>/loeschen" onsubmit="return confirm('Bericht wirklich löschen?')"><button class="btn-small danger">Löschen</button></form>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+<%- include('foot') %>

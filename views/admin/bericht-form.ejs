@@ -1,0 +1,42 @@
+<%- include('head') %>
+<h1><%= r.id ? 'Bericht bearbeiten' : 'Neuer Bericht' %></h1>
+<form method="post" action="/admin/berichte/speichern" enctype="multipart/form-data" class="admin-form">
+  <% if (r.id) { %><input type="hidden" name="id" value="<%= r.id %>"><% } %>
+  <label>Titel</label>
+  <input type="text" name="title" value="<%= r.title %>" required>
+  <label>Datum</label>
+  <input type="date" name="date" value="<%= r.date %>" required>
+  <label>Text <small class="muted">(Leerzeile = neuer Absatz, **fett** möglich, Links werden automatisch klickbar)</small></label>
+  <textarea name="body" rows="14"><%= r.body %></textarea>
+  <label><input type="checkbox" name="published" <%= r.published ? 'checked' : '' %>> Veröffentlicht</label>
+
+  <label>Bilder</label>
+  <% if (r.images.length) { %>
+    <div class="admin-thumbs" id="imgList">
+      <% r.images.forEach(img => { const src = resolveImage(img) || ('/media/' + img); %>
+        <div class="admin-thumb" data-ref="<%= img %>">
+          <img src="<%= src %>" alt="">
+          <button type="button" class="thumb-del" title="Bild entfernen">×</button>
+        </div>
+      <% }) %>
+    </div>
+  <% } else { %><div class="admin-thumbs" id="imgList"></div><% } %>
+  <input type="hidden" name="imagesJson" id="imagesJson" value="<%= JSON.stringify(r.images) %>">
+  <label>Neue Bilder hochladen <small class="muted">(mehrere möglich)</small></label>
+  <input type="file" name="neueBilder" accept="image/*" multiple>
+
+  <div class="admin-form-actions">
+    <button type="submit" class="btn btn-gold">Speichern</button>
+    <a class="btn btn-outline-dark" href="/admin/berichte">Zurück</a>
+  </div>
+</form>
+<script>
+  const list = document.getElementById('imgList');
+  const hidden = document.getElementById('imagesJson');
+  list.addEventListener('click', e => {
+    if (!e.target.classList.contains('thumb-del')) return;
+    e.target.closest('.admin-thumb').remove();
+    hidden.value = JSON.stringify([...list.querySelectorAll('.admin-thumb')].map(t => t.dataset.ref));
+  });
+</script>
+<%- include('foot') %>

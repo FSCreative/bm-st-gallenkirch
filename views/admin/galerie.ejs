@@ -1,0 +1,27 @@
+<%- include('head') %>
+<div class="admin-title-row">
+  <h1><%= g.title %></h1>
+  <form method="post" action="/admin/fotos/<%= g.id %>/umbenennen" class="inline-form">
+    <input type="text" name="title" value="<%= g.title %>" required>
+    <button class="btn-small">Umbenennen</button>
+  </form>
+</div>
+<form method="post" action="/admin/fotos/<%= g.id %>/upload" enctype="multipart/form-data" class="admin-form" style="margin-bottom:2rem">
+  <label>Fotos hochladen <small class="muted">(mehrere möglich, max. 15 MB pro Bild)</small></label>
+  <input type="file" name="fotos" accept="image/*" multiple required>
+  <button type="submit" class="btn btn-gold">Hochladen</button>
+</form>
+<div class="admin-thumbs">
+  <% photos.forEach(p => { %>
+    <div class="admin-thumb">
+      <img src="/media/<%= p.file %>" alt="">
+      <form method="post" action="/admin/foto/<%= p.id %>/caption" class="thumb-caption-form">
+        <input type="text" name="caption" value="<%= p.caption || '' %>" placeholder="Bildunterschrift…">
+        <button class="btn-small" title="Speichern">✓</button>
+      </form>
+      <form method="post" action="/admin/foto/<%= p.id %>/loeschen" onsubmit="return confirm('Foto löschen?')"><button class="thumb-del">×</button></form>
+    </div>
+  <% }) %>
+</div>
+<p style="margin-top:1.5rem"><a class="btn btn-outline-dark" href="/admin/fotos">← Alle Galerien</a></p>
+<%- include('foot') %>
