@@ -1,0 +1,140 @@
+{
+  "vorstand_groupimage": "2481867531",
+  "vorstand": [
+    { "role": "Obmann", "name": "Stefan Marlin", "image": "2453051759", "details": ["Obmann seit 2019", "Medienreferent", "Im Verein seit 2004", "Wohnort: St. Gallenkirch", "Instrument: Trompete"], "extra": "JMLA in Bronze und Silber" },
+    { "role": "Kapellmeister / Schriftführer", "name": "Johannes Juen", "image": "2424359637", "details": ["Kapellmeister", "Schriftführer", "Im Verein seit 1999", "Wohnort: Schruns", "Instrument: Flügelhorn"], "extra": "JMLA in Bronze und Silber" },
+    { "role": "Kassierin", "name": "Barbara Felder", "image": "2453052200", "details": ["Kassierin", "Im Verein seit 2006", "Wohnort: St. Gallenkirch", "Instrument: Klarinette"], "extra": "" },
+    { "role": "Jugendreferentin", "name": "Magdalena Netzer", "image": "2453052629", "details": ["Jugendreferentin", "Im Verein seit 2015", "Wohnort: St. Gallenkirch", "Instrument: Querflöte + Oboe"], "extra": "JMLA in Bronze und Silber" },
+    { "role": "Trachtenwartin", "name": "Heike Lerch", "image": "2453052558", "details": ["Trachtenwartin", "Im Verein seit 2005", "Wohnort: St. Gallenkirch", "Instrument: Trompete"], "extra": "" },
+    { "role": "Notenwart", "name": "Christian Netzer", "image": "2419270313", "details": ["Notenwart", "Im Verein seit 2007", "Wohnort: St. Gallenkirch", "Instrument: Klarinette"], "extra": "" },
+    { "role": "Instrumentenwart", "name": "Raimund Lagger", "image": "2453052712", "details": ["Instrumentenwart", "Im Verein seit 2019", "Wohnort: St. Gallenkirch", "Instrument: Flügelhorn"], "extra": "" }
+  ],
+  "obmaenner": [
+    ["Matthias Morscher", "1923 – 1924"], ["Franz Düngler", "1924 – 1925"], ["Erwin Mathies", "1925 – 1938"],
+    ["Anton Netzer", "1945 – 1950"], ["Franz Düngler", "1950 – 1964"], ["Ernst Juen", "1964 – 1970"],
+    ["Edmund Netzer", "1970 – 1971"], ["Herbert Tschofen (Ehrenobmann)", "1971 – 1990"], ["Elmar Juen", "1990 – 2002"],
+    ["Martin Lechthaler", "2002 – 2005"], ["Christian Kraft", "2005 – 2009"], ["Josef Lechthaler", "2009 – 2014"],
+    ["Christian Kraft", "2014 – 2018"], ["Melanie Durig", "2018 – 2019"], ["Stefan Marlin", "seit 2019"]
+  ],
+  "kapellmeister": [
+    ["Johann Fessl", "1923 – 1931"], ["Robert Hechenberger", "1926 – 1931"], ["Josef Koisser", "1931 bis zum Krieg"],
+    ["Erwin Dünser", "1932 aushilfsweise"], ["Johann Kasper", "1945 – 1946"], ["Johann Bösch", "1946 – 1950"],
+    ["Leo Mathies", "1950 – 1958"], ["Ernst Juen", "1958 – 1961"], ["Franz Purin", "1961 – 1965"],
+    ["Werner Kraft (Ehrenkapellmeister)", "1965 – 1997"], ["Martin Fitsch", "1997 – 2005"], ["Franz Budin", "2005 – 2010"],
+    ["Willi Bitschnau", "2010 – 2016"], ["Gerhard Weinold", "2016 – 2020"], ["Andreas Stross", "2020 – 2022"],
+    ["Gerhard Weinold", "2023"], ["Andreas Stross", "2024"], ["Johannes Juen", "seit 2025"]
+  ],
+  "registers": [
+    { "slug": "kapellmeister", "title": "Kapellmeister + Stabführer", "registerImage": "2493335163", "members": [
+      { "name": "Johannes Juen", "details": ["Kapellmeister / Stabführer", "Ehrenmitglied", "Seit 1999 im Verein"], "image": "2486422543" }
+    ]},
+    { "slug": "faehnrich-und-patin", "title": "Fähnrich und Patin", "members": [
+      { "name": "Gerhard Willi", "details": ["Fähnrich", "Seit 2025 im Verein"], "image": "2420268988" },
+      { "name": "Ingeborg Zugg", "details": ["Fahnenpatin (Fahnagota) seit 1956"], "image": "2420270092" }
+    ]},
+    { "slug": "marketenderinnen", "title": "Marketenderinnen", "registerImage": "2493335195", "members": [
+      { "name": "Kathrin Stocker", "details": ["Marketenderin", "Seit 2011 wieder im Verein"], "image": "2491258085" },
+      { "name": "Barbara Fitsch", "details": ["Marketenderin", "Seit 2011 im Verein"], "image": "2420294069" },
+      { "name": "Simone Haug", "details": ["Marketenderin", "Seit 2011 im Verein"], "image": "2420293018" },
+      { "name": "Stefanie Düngler", "details": ["Seit 2015 im Verein"], "image": "2440878098" }
+    ]},
+    { "slug": "oboe", "title": "Oboe", "members": [
+      { "name": "Magdalena Netzer", "details": ["Jugendreferentin", "Seit 2015 im Verein"], "image": "2464452190" }
+    ]},
+    { "slug": "querfloete", "title": "Querflöte", "registerImage": "2493335193", "members": [
+      { "name": "Michaela Fritz", "details": ["Aktives Ehrenmitglied", "Seit 2002 im Verein"], "image": "2488575888" },
+      { "name": "Eva Wachter", "details": ["Seit 2017 im Verein"], "image": "2479680623" },
+      { "name": "Johanna Vonier", "details": ["Seit 2024 im Verein"], "image": "2497428229" }
+    ]},
+    { "slug": "klarinette", "title": "Klarinette", "registerImage": "2493335191", "members": [
+      { "name": "Michaela Lentsch", "details": ["Seit 2004 im Verein"], "image": "2420294632" },
+      { "name": "Nina Juen", "details": ["Aktives Ehrenmitglied", "Seit 1996 im Verein"], "extra": "JMLA in Bronze und Silber", "image": "2420294252" },
+      { "name": "Rainer Kraft", "details": ["Seit 2006 im Verein"], "image": "2419270200" },
+      { "name": "Barbara Felder", "details": ["Kassierin", "Seit 2005 im Verein"], "image": "2420294296" },
+      { "name": "Christian Netzer", "details": ["Notenwart", "Seit 2007 im Verein"], "extra": "JMLA in Bronze", "image": "2419270202" },
+      { "name": "Melanie Durig", "details": ["Aktives Ehrenmitglied"], "image": "2498652915" },
+      { "name": "Ida Juen", "details": ["Seit 2024 im Verein"], "image": "2498284338" },
+      { "name": "Christian Schönherr", "details": ["Seit 2021 im Verein"], "image": "2492604410" }
+    ]},
+    { "slug": "saxophon", "title": "Saxophon", "registerImage": "2419270210", "members": [
+      { "name": "Manuela Berginz", "details": ["Seit 2015 im Verein"], "image": "2486172252" },
+      { "name": "Marie Juen", "details": ["Seit 2021 im Verein"], "image": "2492604415" },
+      { "name": "Erika Kasper", "details": ["Seit 2024 im Verein"], "image": "2497428233" },
+      { "name": "Annika Stocker", "details": ["Seit 2019 im Verein"], "image": "2497613230" }
+    ]},
+    { "slug": "trompete", "title": "Trompete", "registerImage": "2419270217", "members": [
+      { "name": "Stefan Marlin", "details": ["Seit 2004 im Verein", "Obmann seit 2019", "Medienreferent/Chronist seit 2016", "Kantineur"], "extra": "JMLA in Bronze und Silber", "image": "2455340866" },
+      { "name": "Manuel Loretz", "details": ["Kantineur", "Seit 2004 im Verein"], "image": "2479680881" },
+      { "name": "Heike Lerch", "details": ["Trachtenwartin", "Seit 2009 wieder im Verein"], "extra": "JMLA in Bronze", "image": "2420267281" },
+      { "name": "Julia Lechthaler", "details": ["Seit 2017 im Verein"], "image": "2479681040" }
+    ]},
+    { "slug": "fluegelhorn", "title": "Flügelhorn", "registerImage": "2419270222", "members": [
+      { "name": "Bettina Schönherr", "details": ["Seit 2017 im Verein"], "image": "2419270224" },
+      { "name": "Simon Manahl", "details": ["Seit 2013 im Verein"], "extra": "JMLA in Bronze", "image": "2460449134" },
+      { "name": "Raimund Lagger", "details": ["Instrumentenwart", "Seit 2019 im Verein"], "image": "2491258103" }
+    ]},
+    { "slug": "euphonium", "title": "Euphonium", "registerImage": "2419270228", "members": [
+      { "name": "Martin Lechthaler", "details": ["Aktives Ehrenmitglied", "Seit 1984 im Verein"], "extra": "VBV-Verdienstmedaille in Silber (25 Jahre) und Gold (40 Jahre)", "image": "2420295831" }
+    ]},
+    { "slug": "horn", "title": "Horn", "registerImage": "2493335182", "members": [
+      { "name": "Ronja Weinold", "details": ["Seit 2017 im Verein"], "extra": "Junioren-Leistungsabzeichen, JMLA in Bronze", "image": "2420296354" },
+      { "name": "Roman Schönherr", "details": ["Seit 2017 im Verein"], "image": "2479681717" }
+    ]},
+    { "slug": "posaune", "title": "Posaune", "registerImage": "2493335179", "members": [
+      { "name": "Michael Bereuter", "details": ["Seit 2019 im Verein"], "image": "2486172341" },
+      { "name": "Matthias Martin", "details": ["Seit 2022 im Verein"], "image": "2495458703" },
+      { "name": "Florian Juen", "details": ["Seit 2026 wieder im Verein"], "image": "2498652938" }
+    ]},
+    { "slug": "tuba", "title": "Tuba", "registerImage": "2419270240", "members": [
+      { "name": "Christian Kraft", "details": ["Aktives Ehrenmitglied", "Vizeobmann", "Seit 1981 im Verein"], "extra": "VBV-Verdienstmedaille in Silber (25 Jahre) und Gold (40 Jahre)", "image": "2420296787" },
+      { "name": "Kurt Kraft", "details": ["Aktives Ehrenmitglied", "Seit 1958 im Verein"], "extra": "VBV-Verdienstmedaille in Silber (25 Jahre) und Gold (40 Jahre)", "image": "2420293895" }
+    ]},
+    { "slug": "schlagzeug", "title": "Schlagzeug", "registerImage": "2493335177", "members": [
+      { "name": "Manuel Resch", "details": ["Seit 2013 im Verein"], "extra": "JMLA in Bronze", "image": "2440878099" },
+      { "name": "Simon Kraft", "details": ["Seit 2013 im Verein"], "extra": "JMLA in Bronze", "image": "2440878103" }
+    ]}
+  ],
+  "partners": [
+    {
+      "slug": "musikverein-heiligenberg", "title": "Musikverein Heiligenberg",
+      "subtitle": "Unsere Partnerkapelle aus Oberösterreich – seit 2004",
+      "coverImage": "2419270043", "website": "http://www.mv-heiligenberg.at/",
+      "text": "Seit 2004 ist der Musikverein Heiligenberg unsere Partnerkapelle. Wir sind sehr stolz darüber und dürfen die „Heiligenberger Musi\" ein klein wenig vorstellen:\n\nHeiligenberg ist ein kleiner malerischer Ort im Bezirk Grieskirchen, Oberösterreich. Der Ort verzaubert jeden Naturliebhaber, Radfahrer oder Wanderer mit seiner landschaftlichen Schönheit. Heiligenberg liegt auf 398 m Höhe und hat 710 Einwohner.\n\nDer Musikverein Heiligenberg besteht aus ca. 60 Mitgliedern. Die musikalische Verbindung ergab sich durch unseren Vizekapellmeister Manfred Fitsch jun. und Burgi Schauer, als sie gemeinsam studierten.\n\nObmann: Franz Steininger\nKapellmeister: Wolfgang Hörmanseder\n\nIm August 2004 besuchten uns die Heiligenberger. Nach der Anreise über die Silvretta, mit Stopp beim Stausee, machten wir bei einem gemeinsamen Abendessen erste Bekanntschaften. Der zweite Tag führte uns in die Höhe, und zwar zu einem gemeinsamen Brunch auf der Nova Stoba. Es spielten dort Musikanten aus Heiligenberg und aus St. Gallenkirch. Das Wetter spielte leider nicht mit, weshalb die Wanderung und auch das geplante Platzkonzert der Heiligenberger in St. Gallenkirch im wahrsten Sinne des Wortes ins Wasser fiel. Der guten Stimmung tat dies aber keinen Abbruch und so wurde anstelle des Platzkonzertes der Abend von der „Sunnbenk-Musi\" aus Heiligenberg umrahmt. Am letzten Tag besichtigte die Heiligenberger Musi das Kopswerk in Partenen. Es war ein tolles Wochenende!\n\nUnser Gegenbesuch fand im Juni 2005 statt, wo wir anlässlich des Bezirksmusikfestes in Grieskirchen eingeladen wurden. Wir hatten die Ehre, den Freitagabend im Festzelt zu umrahmen! Am Samstag machten wir einen Ausflug nach Linz und auf den Pöstlingberg. Der Sonntag war ganz im Zeichen des Festes — ein unvergessliches Erlebnis für uns alle! Ein top-organisiertes Fest und überall nur gute Stimmung. Wir wurden herzlichst aufgenommen und betreut. Wir freuen uns auf ein baldiges Wiedersehen...",
+      "imageIds": ["2419270046", "2419270045", "2419270047-2419270106"]
+    },
+    {
+      "slug": "musikkapelle-ebenau", "title": "Musikkapelle Ebenau",
+      "subtitle": "Unsere Partnerkapelle aus Salzburg – seit 2009",
+      "coverImage": "2419270044", "website": "http://www.ebenau.at/Musikkapelle.33.0.html",
+      "text": "Seit dem Jahr 2009 sind wir nun auch stolze Partnerkapelle der Musikkapelle Ebenau. Hier eine kurze Beschreibung:\n\nEbenau, das Dorf der Mühlen genannt, liegt im südlichen Flachgau und gehört zum Bezirk Salzburg-Umgebung. Die 1359 Einwohner zählende Gemeinde liegt auf ca. 623 m. Eine gastfreundliche Bevölkerung sowie gemütliche Gasthöfe, Pensionen, Privatquartiere, Urlaub auf dem Bauernhof und schöne Ferienwohnungen laden zu einem erholsamen Urlaub ein.\n\nDie Musikkapelle Ebenau besteht aus ca. 39 Mitgliedern und verfügt über 3 Untergruppierungen (Tanzlmusik, Klarinettentanzlmusik, Blechquartette), die ebenso wie die Musikkapelle selbst bei den Ausrückungen und musikalischen Aktivitäten des Ortes zu hören sind.\n\nDie musikalische Verbindung ergab sich durch den Obmann Josef Lechthaler und seine Schwester Andrea, welche bei der BM St. Gallenkirch Klarinette spielte. Sie lebt schon seit 2007 in Ebenau und wirkt dort in der Kapelle mit, wodurch der Kontakt zustande kam.\n\nObmann: Josef Fürstaller\nKapellmeister: Stefan Eder\n\nAlles begann mit einem Besuch der Ebenauer 2010 im Montafon zum Bezirksmusikfest im Silbertal. Nach der Ankunft am Samstag in St. Gallenkirch wurden die Kollegen musikalisch empfangen und anschließend auf die Unterkünfte aufgeteilt. Da wir beim Marschmusikwettbewerb im Silbertal teilnahmen, fuhren die Ebenauer später ins Große Walsertal zu einer Führung im Haus Walserstolz in Sonntag. An die Führung folgte eine lustige Käsknöpfle-Partie. Am Sonntag fuhren wir gemeinsam auf den Kristberg zu einem Bergfrühstück. Der Höhepunkt war der Festumzug am Sonntagnachmittag.\n\nDer Gegenbesuch geschah 2011, als wir zum Jubiläumsfest der Prangerschützen Ebenau eingeladen wurden. Nach der Ankunft in Ebenau ging es gleich auf das Fest: Wir spielten gemeinsam mit der MK Ebenau ein Konzert im Festzelt und umrahmten so den Bieranstich. Den Samstag widmeten wir einer Bootsfahrt auf dem Wolfgangsee und der Landeshauptstadt Salzburg, die uns Meinhard Leitich in einer Führung näherbrachte. Der Ausklang folgte auf der Festung Hohensalzburg mit einem zünftigen Ritteressen. Der Sonntag stand ganz im Zeichen der Festmesse und dem Festumzug, obwohl das Wetter nicht ganz mitgespielt hat.\n\nAlles in allem beides unvergessliche Wochenenden und wir hoffen, dass noch viele folgen...",
+      "imageIds": ["2446442547", "2419270108", "2420253357-2420253377", "2419270130", "2419270131"]
+    }
+  ],
+  "links": {
+    "title": "Hier eine kleine Link-Sammlung unserer Freunde und des Verbandes",
+    "groups": [
+      { "name": "Die Verbände", "links": [
+        { "label": "Österreichischer Blasmusikverband", "url": "http://www.blasmusik.at" },
+        { "label": "Vorarlberger Blasmusikverband", "url": "http://www.vbv-blasmusik.at" },
+        { "label": "Österreichische Blasmusikjugend", "url": "http://www.winds4you.at" }
+      ]},
+      { "name": "Unsere Partnerkapellen", "links": [
+        { "label": "Musikverein Heiligenberg aus Oberösterreich", "url": "http://www.mv-heiligenberg.at/" },
+        { "label": "Musikkapelle Ebenau aus Salzburg", "url": "http://www.ebenau.at/Musikkapelle.33.0.html" }
+      ]},
+      { "name": "Musikschule", "links": [
+        { "label": "Musikschule Montafon", "url": "http://stand-montafon.at/musikschule" }
+      ]},
+      { "name": "Die Musikkapellen unseres Blasmusikbezirkes Montafon", "links": [
+        { "label": "Bürgermusik Gaschurn-Partenen", "url": "http://www.buergermusik-gaschurn-partenen.at" },
+        { "label": "Bürgermusik Silbertal", "url": "http://www.bm-silbertal.at" },
+        { "label": "Harmoniemusik Bartholomäberg", "url": "http://www.hm-bartholomaeberg.at" },
+        { "label": "Harmoniemusik Schruns", "url": "http://www.hm-schruns.at" },
+        { "label": "Harmoniemusik Tschagguns", "url": "http://www.hm-tschagguns.at" },
+        { "label": "Harmoniemusik Vandans", "url": "http://www.hm-vandans.at" },
+        { "label": "Musikverein St. Anton im Montafon", "url": "http://www.mv-stanton.at" },
+        { "label": "Trachtenkapelle Gantschier", "url": "http://www.tk-gantschier.at" }
+      ]}
+    ]
+  }
+}
