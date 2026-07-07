@@ -1,0 +1,19 @@
+{
+  "name": "bm-st-gallenkirch",
+  "version": "1.0.0",
+  "description": "Website der Bürgermusik St. Gallenkirch",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.10.0",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "multer": "^1.4.5-lts.2"
+  }
+}
