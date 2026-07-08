@@ -25,23 +25,7 @@ if (toggle && nav) {
 // ---------- Scroll-Reveal (deaktiviert – Inhalte sollen immer sofort sichtbar sein) ----------
 document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
 
-// ---------- Zähler-Animation (Über uns) ----------
-document.querySelectorAll('.stat-value[data-count]').forEach(el => {
-  const target = parseInt(el.dataset.count, 10);
-  if (isNaN(target)) return;
-  const io = new IntersectionObserver(entries => {
-    if (!entries[0].isIntersecting) return;
-    io.disconnect();
-    const start = performance.now(), dur = 1400;
-    const tick = now => {
-      const p = Math.min((now - start) / dur, 1);
-      el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
-      if (p < 1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-  }, { threshold: 0.5 });
-  io.observe(el);
-});
+// (Zähler-Animation entfernt – Zahlen stehen immer sofort korrekt da)
 
 // ---------- Lightbox ----------
 const lb = document.getElementById('lightbox');
