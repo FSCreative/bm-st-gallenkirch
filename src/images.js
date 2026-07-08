@@ -29,6 +29,15 @@ const PAGE_GALLERIES = {
   '/bezirksmusikfest-2023-rückblick/fotos-vrwäga/': { slug: 'bezirksmusikfest-2023', title: 'Bezirksmusikfest 2023 - #vrwäga' }
 };
 
+// Zusätzliche Einzelbilder (höhere Auflösung als auf der alten Website verfügbar)
+const EXTRA_IMAGES = [
+  {
+    // Mannschaftsfoto 2026 (vom Verein ans Montafon-Portal geliefert), 1534x1304
+    url: 'https://www.montafon.at/VCloud/event/platzkonzert-mit-der-burgermusik-st.-gallenkirch_7ba15ee2-7cd4-477f-bc9a-7059b28288a5/99568/image-thumb__99568__magazineDetail/platzkonzert-mit-der-burgermusik-st_-gallenkirch_burgermusik-st_-gallenkirch-2026_2026-06-23_511bb045-a504-4e50-a394-5ba6e1940346~-~media--2d2d2839--query@2x.6d7664ef.jpg',
+    name: 'hero-mannschaftsfoto-2026.jpg'
+  }
+];
+
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 async function fetchText(url) {
@@ -110,10 +119,25 @@ async function runImport() {
   fs.writeFileSync(MARKER, JSON.stringify(state, null, 2));
 }
 
+async function downloadExtras() {
+  for (const x of EXTRA_IMAGES) {
+    const dest = path.join(IMG_DIR, x.name);
+    if (fs.existsSync(dest) && fs.statSync(dest).size > 0) continue;
+    try {
+      await downloadFile(x.url, dest);
+      console.log('[images] Extra-Bild geladen:', x.name);
+    } catch (e) {
+      console.warn('[images] Extra-Bild fehlgeschlagen:', x.name, e.message);
+    }
+  }
+}
+
 function importImagesInBackground() {
   if (process.env.SKIP_IMAGE_IMPORT === '1') return;
   setTimeout(() => {
-    runImport().catch(e => console.error('[images] Import-Fehler:', e));
+    downloadExtras()
+      .then(() => runImport())
+      .catch(e => console.error('[images] Import-Fehler:', e));
   }, 3000);
 }
 
