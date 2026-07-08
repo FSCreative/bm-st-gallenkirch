@@ -1,7 +1,7 @@
 <%- include('partials/header') %>
 
 <section class="hero">
-  <% const heroImg = resolveImage('emotionheader5783747643.jpg'); %>
+  <% const heroImg = resolveImage('hero-mannschaftsfoto-2026.jpg') || resolveImage('emotionheader5783747643.jpg'); %>
   <div class="hero-bg" <% if (heroImg) { %>style="background-image:url('<%= heroImg %>')"<% } %>></div>
   <div class="hero-overlay"></div>
   <div class="hero-content reveal">
