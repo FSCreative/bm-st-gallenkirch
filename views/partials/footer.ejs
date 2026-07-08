@@ -48,6 +48,28 @@
   <button class="lb-next" aria-label="Nächstes Bild">›</button>
   <div class="lb-caption"></div>
 </div>
-<script src="/js/main.js"></script>
+<nav class="bottom-nav" aria-label="Mobile Navigation">
+  <a href="/" class="<%= path === '/' ? 'active' : '' %>">
+    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 3 2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg>
+    <span>Home</span>
+  </a>
+  <a href="/berichte" class="<%= path.startsWith('/berichte') ? 'active' : '' %>">
+    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-7 14H7v-2h5v2zm5-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+    <span>Berichte</span>
+  </a>
+  <a href="/termine" class="<%= path.startsWith('/termine') ? 'active' : '' %>">
+    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14v10zM5 8V6h14v2H5z"/></svg>
+    <span>Termine</span>
+  </a>
+  <a href="/mitglieder" class="<%= path.startsWith('/mitglieder') ? 'active' : '' %>">
+    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M16 11a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm-8 0a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm0 2c-2.3 0-7 1.2-7 3.5V19h14v-2.5C15 14.2 10.3 13 8 13zm8 0c-.3 0-.6 0-1 .1a4.2 4.2 0 0 1 2 3.4V19h6v-2.5c0-2.3-4.7-3.5-7-3.5z"/></svg>
+    <span>Mitglieder</span>
+  </a>
+  <a href="/fotos" class="<%= path.startsWith('/fotos') ? 'active' : '' %>">
+    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zM8.5 13.5l2.5 3 3.5-4.5 4.5 6H5l3.5-4.5z"/></svg>
+    <span>Fotos</span>
+  </a>
+</nav>
+<script src="/js/main.js?v=<%= assetV %>"></script>
 </body>
 </html>
