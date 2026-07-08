@@ -1,22 +1,10 @@
 <%- include('partials/header') %>
-<% const rimg = resolveImage(reg.registerImage); %>
-<% if (rimg) { %>
-<section class="register-hero">
-  <img src="<%= rimg %>" alt="Register <%= reg.title %>">
-  <div class="register-hero-overlay"></div>
-  <div class="register-hero-text container">
-    <p>Unsere Mitglieder</p>
-    <h1><%= reg.title %></h1>
-  </div>
-</section>
-<% } else { %>
 <section class="page-head slim">
   <div class="container">
     <p class="page-head-kicker">Unsere Mitglieder</p>
     <h1><%= reg.title %></h1>
   </div>
 </section>
-<% } %>
 <section class="section">
   <div class="container">
     <div class="person-grid">
