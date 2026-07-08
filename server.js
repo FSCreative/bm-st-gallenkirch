@@ -65,6 +65,7 @@ function nl2p(text) {
 
 app.locals.resolveImage = resolveImage;
 app.locals.nl2p = nl2p;
+app.locals.assetV = Date.now(); // Cache-Busting für CSS/JS bei jedem Deploy
 
 app.use((req, res, next) => {
   res.locals.path = req.path;
