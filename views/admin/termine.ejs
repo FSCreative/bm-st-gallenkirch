@@ -1,23 +1,66 @@
 <%- include('head') %>
 <h1>Termine verwalten</h1>
-<h2 class="admin-sub">Neuer Termin</h2>
-<form method="post" action="/admin/termine/neu" class="admin-form termin-row">
-  <input type="text" name="datum" placeholder="z. B. Dienstag, 14. Juli 2026" required>
-  <input type="text" name="titel" placeholder="Titel (z. B. Platzkonzert)" required>
-  <input type="text" name="ort" placeholder="Ort">
-  <input type="text" name="hinweis" placeholder="Hinweis (optional)">
-  <button class="btn btn-gold">+ Hinzufügen</button>
-</form>
-<h2 class="admin-sub">Bestehende Termine</h2>
-<% events.forEach(e => { %>
-  <form method="post" action="/admin/termine/<%= e.id %>" class="admin-form termin-row">
-    <input type="text" name="datum" value="<%= e.datum %>">
-    <input type="text" name="titel" value="<%= e.titel %>">
-    <input type="text" name="ort" value="<%= e.ort %>">
-    <input type="text" name="hinweis" value="<%= e.hinweis %>">
-    <input type="number" name="sort" value="<%= e.sort %>" title="Reihenfolge" style="width:70px">
-    <button class="btn-small">Speichern</button>
-    <button class="btn-small danger" formaction="/admin/termine/<%= e.id %>/loeschen" onclick="return confirm('Termin löschen?')">Löschen</button>
+<p class="muted">Diese Termine erscheinen auf der Startseite (die ersten 5) und auf der Seite „Termine“ – in der Reihenfolge des Feldes <strong>Reihenfolge</strong> (kleinere Zahl = weiter oben). Vergangene Termine am besten einfach löschen.</p>
+
+<div class="admin-box">
+  <h2 class="admin-sub" style="margin-top:0">➕ Neuen Termin anlegen</h2>
+  <form method="post" action="/admin/termine/neu" class="termin-card">
+    <div class="field">
+      <label>Datum / Uhrzeit <small>wird genau so angezeigt</small></label>
+      <input type="text" name="datum" placeholder="z. B. Dienstag, 14. Juli 2026, 20:00 Uhr" required>
+    </div>
+    <div class="field">
+      <label>Titel <small>was findet statt?</small></label>
+      <input type="text" name="titel" placeholder="z. B. Platzkonzert" required>
+    </div>
+    <div class="field">
+      <label>Ort <small>optional</small></label>
+      <input type="text" name="ort" placeholder="z. B. Musikpavillon St. Gallenkirch">
+    </div>
+    <div class="field">
+      <label>Hinweis <small>optional, kursive Zusatzzeile</small></label>
+      <input type="text" name="hinweis" placeholder="z. B. Bewirtung durch die Bürgermusik">
+    </div>
+    <div class="termin-actions">
+      <button class="btn btn-gold">Termin speichern</button>
+    </div>
   </form>
+</div>
+
+<h2 class="admin-sub">📅 Bestehende Termine (<%= events.length %>)</h2>
+<% events.forEach((e, i) => { %>
+  <div class="admin-box termin-box">
+    <div class="termin-box-head">
+      <strong><%= i + 1 %>. <%= e.titel || 'Ohne Titel' %></strong>
+      <span class="muted"><%= e.datum %></span>
+    </div>
+    <form method="post" action="/admin/termine/<%= e.id %>" class="termin-card">
+      <div class="field">
+        <label>Datum / Uhrzeit</label>
+        <input type="text" name="datum" value="<%= e.datum %>">
+      </div>
+      <div class="field">
+        <label>Titel</label>
+        <input type="text" name="titel" value="<%= e.titel %>">
+      </div>
+      <div class="field">
+        <label>Ort</label>
+        <input type="text" name="ort" value="<%= e.ort %>">
+      </div>
+      <div class="field">
+        <label>Hinweis</label>
+        <input type="text" name="hinweis" value="<%= e.hinweis %>">
+      </div>
+      <div class="field field-sort">
+        <label>Reihenfolge</label>
+        <input type="number" name="sort" value="<%= e.sort %>">
+      </div>
+      <div class="termin-actions">
+        <button class="btn-small">💾 Speichern</button>
+        <button class="btn-small danger" formaction="/admin/termine/<%= e.id %>/loeschen" formnovalidate onclick="return confirm('Termin „<%= e.titel %>“ wirklich löschen?')">🗑 Löschen</button>
+      </div>
+    </form>
+  </div>
 <% }) %>
+<% if (!events.length) { %><p class="muted">Noch keine Termine eingetragen.</p><% } %>
 <%- include('foot') %>
