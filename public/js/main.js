@@ -22,18 +22,8 @@ if (toggle && nav) {
   });
 }
 
-// ---------- Scroll-Reveal ----------
-const revealEls = document.querySelectorAll('.reveal');
-if ('IntersectionObserver' in window) {
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(en => {
-      if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); }
-    });
-  }, { threshold: 0.08 });
-  revealEls.forEach(el => io.observe(el));
-} else {
-  revealEls.forEach(el => el.classList.add('visible'));
-}
+// ---------- Scroll-Reveal (deaktiviert – Inhalte sollen immer sofort sichtbar sein) ----------
+document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
 
 // ---------- Zähler-Animation (Über uns) ----------
 document.querySelectorAll('.stat-value[data-count]').forEach(el => {
