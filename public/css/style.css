@@ -292,6 +292,19 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; }
 .login-card input { width: 100%; padding: .7rem 1rem; border: 1px solid #d8cdbc; border-radius: 10px; margin-bottom: 1.1rem; font-size: 1rem; }
 .login-back { display: block; margin-top: 1.2rem; font-size: .85rem; color: var(--muted); }
 
+/* ---------- Lange Überschriften: immer in die Kacheln einpassen ---------- */
+.report-body h3, .register-body h3, .person-body h3, .partner-body h3,
+.event-title, .contact-card h3, .admin-card, .subpage-card span,
+.timeline-card .event-title, .section-title, .page-head h1, .register-hero-text h1 {
+  overflow-wrap: break-word;
+  word-break: normal;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  min-width: 0;
+}
+.report-body h3 { font-size: 1.05rem; }
+.report-body, .register-body, .person-body, .partner-body { min-width: 0; }
+
 /* ---------- Mobile Bottom-Nav (App-Style) ---------- */
 .bottom-nav { display: none; }
 @media (max-width: 920px) {
