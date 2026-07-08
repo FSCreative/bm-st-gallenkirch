@@ -18,6 +18,12 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: '7d' }));
+// Favicon = Vereinslogo (lokale Kopie von der alten Website)
+app.get('/favicon.ico', (req, res) => {
+  const logo = path.join(DATA_DIR, 'media', 'images', 'cache_2493533237.png');
+  if (fs.existsSync(logo)) return res.sendFile(logo);
+  res.status(404).end();
+});
 app.use('/media', express.static(path.join(DATA_DIR, 'media'), { maxAge: '30d' }));
 
 app.use(session({
