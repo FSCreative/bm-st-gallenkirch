@@ -30,8 +30,8 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; }
 /* ---------- Header ---------- */
 .site-header { position: sticky; top: 0; z-index: 100; background: var(--wine); color: #fff; box-shadow: 0 2px 14px rgba(0,0,0,.25); }
 .header-inner { max-width: 1150px; margin: 0 auto; padding: 0 1.25rem; display: flex; align-items: center; justify-content: space-between; min-height: 64px; gap: 1rem; }
-.brand { display: flex; align-items: center; gap: .6rem; color: #fff; text-decoration: none; padding: .4rem 0; }
-.brand-icon { width: 30px; height: 30px; color: var(--gold-light); }
+.brand { display: flex; align-items: center; gap: .7rem; color: #fff; text-decoration: none; padding: .4rem 0; }
+.brand-logo { width: 44px; height: 44px; border-radius: 50%; background: #f2f2f2; object-fit: contain; box-shadow: 0 1px 6px rgba(0,0,0,.35); flex-shrink: 0; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
 .brand-text strong { font-family: var(--font-head); font-size: 1.05rem; letter-spacing: .3px; }
 .brand-text span { font-size: .78rem; opacity: .85; letter-spacing: 1.5px; text-transform: uppercase; }
@@ -90,10 +90,23 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; }
 .social-line { text-align: center; margin-top: 1.5rem; }
 
 /* Page head */
-.page-head { background: var(--wine); color: #fff; padding: 3.2rem 0; text-align: center; position: relative; }
+.page-head { background: linear-gradient(160deg, var(--wine-dark), var(--wine-light)); color: #fff; padding: 2.8rem 0 3rem; text-align: center; position: relative; }
+.page-head::after { content: ""; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: 70px; height: 4px; background: var(--gold); border-radius: 4px 4px 0 0; }
 .page-head.img { background: var(--wine-dark) center/cover no-repeat; background-blend-mode: multiply; background-color: rgba(70,15,15,.75); padding: 4.5rem 0; }
-.page-head h1 { font-size: clamp(1.9rem, 4.5vw, 2.8rem); }
+.page-head h1 { font-size: clamp(1.9rem, 4.5vw, 2.6rem); }
 .page-head p { opacity: .85; margin-top: .5rem; }
+.page-head.slim { padding: 1.7rem 0 1.9rem; text-align: left; }
+.page-head.slim::after { left: 0; transform: none; margin-left: max(1.25rem, calc((100% - 1150px) / 2 + 1.25rem)); }
+.page-head.slim h1 { font-size: clamp(1.6rem, 3.5vw, 2.1rem); }
+.page-head-kicker { text-transform: uppercase; letter-spacing: 2.5px; font-size: .75rem; color: var(--gold-light); margin-bottom: .2rem; }
+
+/* Register-Hero (Mitgliederseiten) */
+.register-hero { position: relative; max-height: 420px; overflow: hidden; background: var(--wine-dark); }
+.register-hero img { width: 100%; height: 420px; object-fit: cover; object-position: center 30%; }
+.register-hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(40,8,8,.25) 40%, rgba(40,8,8,.82)); }
+.register-hero-text { position: absolute; left: 50%; transform: translateX(-50%); bottom: 1.6rem; width: 100%; color: #fff; }
+.register-hero-text p { text-transform: uppercase; letter-spacing: 2.5px; font-size: .75rem; color: var(--gold-light); margin-bottom: .2rem; }
+.register-hero-text h1 { font-size: clamp(1.9rem, 4.5vw, 2.8rem); text-shadow: 0 2px 12px rgba(0,0,0,.5); }
 
 /* ---------- Events ---------- */
 .events-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.1rem; margin-top: 1.5rem; }
@@ -133,6 +146,7 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s, filter .3s; }
 .gallery-item:hover img { transform: scale(1.07); filter: brightness(1.07); }
 .lightbox { position: fixed; inset: 0; z-index: 300; background: rgba(20,5,5,.94); display: flex; align-items: center; justify-content: center; }
+.lightbox[hidden] { display: none; }
 .lightbox img { max-width: 92vw; max-height: 86vh; border-radius: 6px; box-shadow: 0 10px 60px rgba(0,0,0,.6); }
 .lightbox button { position: absolute; background: none; border: 0; color: #fff; font-size: 2.6rem; cursor: pointer; opacity: .75; padding: 1rem; z-index: 2; }
 .lightbox button:hover { opacity: 1; }
@@ -142,11 +156,11 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; }
 .lb-caption { position: absolute; bottom: 1.2rem; left: 0; right: 0; text-align: center; color: #fff; opacity: .85; font-size: .9rem; }
 
 /* ---------- Personen / Register ---------- */
-.person-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.4rem; margin-top: 1.8rem; }
+.person-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(215px, 1fr)); gap: 1.4rem; margin-top: 1.8rem; }
 .person-card { background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: transform .2s; }
 .person-card:hover { transform: translateY(-4px); }
-.person-img { aspect-ratio: 4/4.6; overflow: hidden; background: var(--cream); }
-.person-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.person-img { aspect-ratio: 2/3; overflow: hidden; background: linear-gradient(180deg, #efe8db, var(--cream)); display: flex; align-items: center; justify-content: center; }
+.person-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 .person-ph { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 2.6rem; color: var(--wine); opacity: .3; }
 .person-body { padding: 1rem 1.2rem 1.2rem; }
 .person-role { font-size: .75rem; text-transform: uppercase; letter-spacing: 1.2px; color: var(--gold); font-weight: 700; }
@@ -293,6 +307,8 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; }
   .nav-toggle.open span:nth-child(2) { opacity: 0; }
   .nav-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
   .hero { min-height: 68vh; }
+  .register-hero img { height: 280px; }
+  .register-hero-text { bottom: 1.1rem; }
   .split { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; gap: 1.5rem; }
   .section { padding: 3rem 0; }
@@ -301,9 +317,7 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; }
 }
 @media (max-width: 480px) {
   .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
-  .person-grid { grid-template-columns: 1fr 1fr; }
+  .person-grid { grid-template-columns: 1fr 1fr; gap: .8rem; }
   .person-body { padding: .7rem .8rem .9rem; }
   .events-grid { grid-template-columns: 1fr; }
 }
-
-.lightbox[hidden] { display: none; }
