@@ -282,8 +282,18 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; }
 .thumb-caption-form input { flex: 1; font-size: .75rem; padding: .3rem .5rem; border: 1px solid #ddd; border-radius: 6px; }
 .inline-form { display: flex; gap: .5rem; }
 .inline-form input { padding: .55rem .9rem; border: 1px solid #d8cdbc; border-radius: 10px; }
-.termin-row { display: grid; grid-template-columns: 1.3fr 1.3fr 1fr 1fr auto auto auto; gap: .5rem; align-items: center; background: #fff; padding: .6rem; border-radius: 10px; margin-bottom: .5rem; box-shadow: 0 2px 8px rgba(60,15,15,.07); }
-.termin-row input { width: 100%; padding: .5rem .7rem; border: 1px solid #d8cdbc; border-radius: 8px; font-size: .88rem; }
+.admin-box { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.2rem 1.4rem; margin-bottom: 1rem; }
+.termin-box { border-left: 4px solid var(--gold); }
+.termin-box-head { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: .7rem; }
+.termin-box-head strong { color: var(--wine); }
+.termin-card { display: grid; grid-template-columns: 1.2fr 1.2fr 1fr 1fr; gap: .8rem; align-items: end; }
+.termin-card .field { display: flex; flex-direction: column; min-width: 0; }
+.termin-card .field label { font-size: .78rem; font-weight: 700; margin-bottom: .25rem; color: var(--ink); }
+.termin-card .field label small { font-weight: 400; color: var(--muted); }
+.termin-card .field input { width: 100%; padding: .55rem .75rem; border: 1px solid #d8cdbc; border-radius: 8px; font-size: .9rem; }
+.termin-card .field-sort { max-width: 110px; }
+.termin-actions { grid-column: 1 / -1; display: flex; gap: .6rem; align-items: center; }
+@media (max-width: 700px) { .termin-card { grid-template-columns: 1fr; } }
 .login-body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: linear-gradient(135deg, var(--wine-dark), var(--wine-light)); }
 .login-card { background: #fff; border-radius: var(--radius); box-shadow: 0 20px 60px rgba(0,0,0,.35); padding: 2.4rem 2.2rem; width: min(380px, 92vw); text-align: center; }
 .login-card h1 { color: var(--wine); }
