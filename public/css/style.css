@@ -50,7 +50,7 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; }
 
 /* ---------- Hero ---------- */
 .hero { position: relative; min-height: 82vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; overflow: hidden; }
-.hero-bg { position: absolute; inset: 0; background: var(--wine-dark) center 30%/cover no-repeat; }
+.hero-bg { position: absolute; inset: 0; background: var(--wine-dark) center 78%/cover no-repeat; }
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(50,10,10,.55), rgba(50,10,10,.75)); }
 .hero-content { position: relative; z-index: 2; padding: 4rem 1.5rem; }
 .hero-kicker { text-transform: uppercase; letter-spacing: 3px; font-size: .85rem; color: var(--gold-light); margin-bottom: 1rem; }
