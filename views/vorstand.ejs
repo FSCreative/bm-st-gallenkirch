@@ -1,10 +1,24 @@
 <%- include('partials/header') %>
-<section class="page-head"><div class="container"><h1>Vorstand</h1><p>Die Vereinsleitung der Bürgermusik St. Gallenkirch</p></div></section>
+<% const gp = resolveImage('2481867531'); %>
+<% if (gp) { %>
+<section class="register-hero">
+  <img src="<%= gp %>" alt="Vorstand der Bürgermusik St. Gallenkirch">
+  <div class="register-hero-overlay"></div>
+  <div class="register-hero-text container">
+    <p>Die Vereinsleitung</p>
+    <h1>Vorstand</h1>
+  </div>
+</section>
+<% } else { %>
+<section class="page-head slim">
+  <div class="container">
+    <p class="page-head-kicker">Die Vereinsleitung</p>
+    <h1>Vorstand</h1>
+  </div>
+</section>
+<% } %>
 <section class="section">
   <div class="container">
-    <% const gp = resolveImage('2481867531'); if (gp) { %>
-      <div class="group-photo reveal"><img src="<%= gp %>" alt="Vorstand der Bürgermusik St. Gallenkirch" loading="lazy"></div>
-    <% } %>
     <div class="person-grid">
       <% vorstand.forEach(v => { const img = resolveImage(v.image); %>
         <div class="person-card reveal">

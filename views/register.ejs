@@ -1,10 +1,24 @@
 <%- include('partials/header') %>
-<section class="page-head"><div class="container"><h1><%= reg.title %></h1><p>Register der Bürgermusik St. Gallenkirch</p></div></section>
+<% const rimg = resolveImage(reg.registerImage); %>
+<% if (rimg) { %>
+<section class="register-hero">
+  <img src="<%= rimg %>" alt="Register <%= reg.title %>">
+  <div class="register-hero-overlay"></div>
+  <div class="register-hero-text container">
+    <p>Unsere Mitglieder</p>
+    <h1><%= reg.title %></h1>
+  </div>
+</section>
+<% } else { %>
+<section class="page-head slim">
+  <div class="container">
+    <p class="page-head-kicker">Unsere Mitglieder</p>
+    <h1><%= reg.title %></h1>
+  </div>
+</section>
+<% } %>
 <section class="section">
   <div class="container">
-    <% const rimg = resolveImage(reg.registerImage); if (rimg) { %>
-      <div class="group-photo reveal"><img src="<%= rimg %>" alt="Register <%= reg.title %>" loading="lazy"></div>
-    <% } %>
     <div class="person-grid">
       <% reg.members.forEach(m => { const img = resolveImage(m.image); %>
         <div class="person-card reveal">
